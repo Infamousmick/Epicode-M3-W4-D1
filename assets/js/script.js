@@ -29,3 +29,28 @@ document.addEventListener("DOMContentLoaded", function () {
     },
   });
 });
+
+// Extra: Allo scroll anima le righe
+const elementList = document.querySelectorAll(
+  "#trending .swiper, #new .swiper, #again .swiper",
+);
+
+window.addEventListener("scroll", (e) => {
+  elementList.forEach((element) => {
+    let pos = getPosition(element);
+
+    if (window.scrollY >= pos.yTop && window.scrollY <= pos.yBottom) {
+      element.classList.add("section-fade");
+    } else {
+      element.classList.remove("section-fade");
+    }
+  });
+});
+
+function getPosition(element) {
+  let rect = element.getBoundingClientRect();
+  return {
+    yTop: rect.top,
+    yBottom: rect.bottom,
+  };
+}
