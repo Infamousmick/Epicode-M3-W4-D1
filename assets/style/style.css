@@ -34,7 +34,6 @@ nav .right-navbar li.dropdown img {
     border-radius: 50%;
 }
 
-
 /* ----- Main ----- */
 
 /* Top Title */
@@ -49,9 +48,6 @@ nav .right-navbar li.dropdown img {
     width: fit-content;
 }
 
-/* .topTitle .left-container ul {
-    position: relative;
-} */
 
 
 .topTitle .left-container ul a.nav-link {
@@ -65,10 +61,71 @@ nav .right-navbar li.dropdown img {
 
 .topTitle .right-container i {
     border: 2px solid white;
-    padding: 5px 20px;
+    padding: 8px 22px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     line-height: 1;
-    cursor: pointer
+    cursor: pointer;
+    font-size: 0.8em
+}
+
+
+/* ----- Sections ----- */
+section h3.title {
+    color: white;
+    font-size: 1.25em
+}
+
+/* SlideJS */
+
+:root {
+    --swiper-navigation-color: #ffffff;
+    --swiper-navigation-size: 40px;
+
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    opacity: 0.4;
+}
+
+section .swiper-slide {
+    cursor: pointer;
+}
+
+/* Animazione all'hover della slide */
+
+@keyframes pulse {
+    from {
+        transform: scale(0.97);
+    }
+
+    to {
+        transform: scale(1.01);
+    }
+}
+
+
+section .swiper-slide:hover {
+    animation: pulse 0.5s infinite ease-in-out alternate;
+    transform-origin: top center;
+    z-index: 10;
+}
+
+section .swiper-slide.swiper-slide-active:hover {
+    transform-origin: top left !important;
+}
+
+section .swiper-slide.swiper-slide-fully-visible:has(+ .swiper-slide:not(.swiper-slide-fully-visible)):hover {
+    transform-origin: top right !important;
+}
+
+.swiper-slide {
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.swiper-slide.swiper-slide-fully-visible+.swiper-slide:not(.swiper-slide-fully-visible) {
+    opacity: 0.3;
 }
