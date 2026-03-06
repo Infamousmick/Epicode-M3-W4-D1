@@ -30,9 +30,36 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+// Classe .nav-link.active
+const navLinkList = document.querySelectorAll("header .nav-link");
+navLinkList.forEach((link) => {
+  link.addEventListener("click", () => {
+    const oldNavLinkActive = document.querySelector("header .nav-link.active");
+    switchActive(oldNavLinkActive, link);
+  });
+});
+
+// Elemento Icon nella classe .topTitle .right-container
+const topTitleIconList = document.querySelectorAll(
+  ".topTitle .right-container i",
+);
+topTitleIconList.forEach((icon) => {
+  icon.addEventListener("click", () => {
+    const oldtopTitleIcon = document.querySelector(
+      ".topTitle .right-container i.active",
+    );
+    switchActive(oldtopTitleIcon, icon);
+  });
+});
+
+function switchActive(oldEl, newEl) {
+  newEl.classList.add("active");
+  oldEl.classList.remove("active");
+}
+
 // Extra: Allo scroll anima le righe
 const elementList = document.querySelectorAll(
-  "#trending .swiper, #new .swiper, #again .swiper",
+  "#trending .container-fluid, #new .container-fluid, #again .container-fluid",
 );
 
 window.addEventListener("scroll", (e) => {
@@ -42,7 +69,10 @@ window.addEventListener("scroll", (e) => {
     if (window.scrollY >= pos.yTop && window.scrollY <= pos.yBottom) {
       element.classList.add("section-fade");
     } else {
-      element.classList.remove("section-fade");
+      // if (element.classList.contains("section-fade")) {
+      //   element.classList.remove("section-fade");
+      //   element.classList.add("section-fade-reverse");
+      // }
     }
   });
 });
