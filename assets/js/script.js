@@ -35,7 +35,11 @@ const navLinkList = document.querySelectorAll("header .nav-link");
 navLinkList.forEach((link) => {
   link.addEventListener("click", () => {
     const oldNavLinkActive = document.querySelector("header .nav-link.active");
-    switchActive(oldNavLinkActive, link);
+    if (link.id == "kids") {
+      link.classList.toggle("active");
+    } else if (!link.classList.contains("active")) {
+      switchActive(oldNavLinkActive, link);
+    }
   });
 });
 
@@ -48,7 +52,9 @@ topTitleIconList.forEach((icon) => {
     const oldtopTitleIcon = document.querySelector(
       ".topTitle .right-container i.active",
     );
-    switchActive(oldtopTitleIcon, icon);
+    if (!icon.classList.contains("active")) {
+      switchActive(oldtopTitleIcon, icon);
+    }
   });
 });
 
@@ -56,6 +62,14 @@ function switchActive(oldEl, newEl) {
   newEl.classList.add("active");
   oldEl.classList.remove("active");
 }
+
+// Modal
+const myModal = document.getElementById("serviceModal");
+const myInput = document.getElementById("email");
+
+myModal.addEventListener("shown.bs.modal", function () {
+  myInput.focus();
+});
 
 // Extra: Allo scroll anima le righe
 const elementList = document.querySelectorAll(
