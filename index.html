@@ -32,7 +32,7 @@
   <body>
     <!-- Header -->
     <header>
-      <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top">
+      <nav class="navbar navbar-expand-lg sticky-top" data-bs-theme="dark">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">
             <img src="assets/imgs/Netflix_Logo_RGB.png" alt="Logo" />
@@ -61,48 +61,52 @@
             </ul>
           </div>
 
-          <div
-            class="right-navbar ms-auto me-3 d-flex align-items-center order-1 order-lg-2"
-          >
-            <ul class="d-flex flex-row align-items-center gap-3 mb-0">
-              <li>
-                <i class="fa-solid fa-magnifying-glass"></i>
-              </li>
-              <li class="nav-link" id="kids">KIDS</li>
-              <li><i class="fa-solid fa-bell"></i></li>
-              <li class="nav-item dropdown">
-                <a
-                  class="nav-link dropdown-toggle"
-                  href="#"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  <img src="assets/imgs/profile.png" alt="Profile" />
-                </a>
-                <ul class="dropdown-menu dropdown-menu-end">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li><hr class="dropdown-divider" /></li>
-                  <li>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-          </div>
+          <div class="d-flex align-items-center order-1 order-lg-2 ms-auto">
+            <div class="right-navbar d-flex align-items-center me-2">
+              <ul
+                class="d-flex flex-row align-items-center gap-2 gap-lg-3 mb-0 ps-0"
+              >
+                <li>
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                </li>
+                <li class="nav-link" id="kids">KIDS</li>
+                <li><i class="fa-solid fa-bell"></i></li>
+                <li class="nav-item dropdown">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    href="#"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    <img src="assets/imgs/profile.png" alt="Profile" />
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-end">
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li>
+                      <a class="dropdown-item" href="#">Another action</a>
+                    </li>
+                    <li><hr class="dropdown-divider" /></li>
+                    <li>
+                      <a class="dropdown-item" href="#">Something else here</a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
 
-          <button
-            class="navbar-toggler order-2"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
+            <button
+              class="navbar-toggler border-0"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          </div>
         </div>
       </nav>
     </header>
@@ -110,7 +114,7 @@
     <main>
       <div class="topTitle">
         <div
-          class="container-fluid px-4 d-flex justify-content-between align-items-center"
+          class="container-fluid px-4 d-flex justify-content-between align-items-center gap-3"
         >
           <div class="left-container d-flex align-items-center">
             <h2 class="title mb-0">TV Shows</h2>
